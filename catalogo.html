@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLVE | Catálogo de Polvorones</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="polve.png" alt="POLVE Logo">
+            </a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="historia.html">Historia</a>
+            <a href="catalogo.html">Catálogo</a>
+        </div>
+    </nav>
+
+    <!-- Catalog Content -->
+    <div class="catalog-section">
+        <h1 style="text-align: center; font-size: 3.5rem; color: var(--color-brand-pop); margin-bottom: 2rem;">Elige tu
+            POLVE</h1>
+        <p
+            style="text-align: center; max-width: 600px; margin: 0 auto 4rem auto; font-size: 1.2rem; color: var(--color-accent);">
+            Pequeñas dosis de felicidad envueltas en azúcar. Hechos a mano, uno por uno.
+        </p>
+
+        <div class="products-grid">
+
+            <!-- Product 1 -->
+            <div class="product-card animate-me">
+                <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="POLVE Clásico" class="product-img">
+                <h2 class="product-title">POLVE Clásico</h2>
+                <p style="color: var(--color-accent); margin-bottom: 0.5rem; opacity: 0.8;">(100g - aprox 8 pzas)</p>
+                <p class="product-desc">"El antojo perfecto". Suave, delicado y cubierto de nuestra magia blanca. Ideal
+                    para alegrar esa tarde de café.</p>
+                <div class="product-price">$55.00 MXN</div>
+                <button class="btn-whatsapp" data-product="POLVE Clásico (100g)" data-price="$55">
+                    <i class="fa-brands fa-whatsapp"></i> Pedir este POLVE
+                </button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card animate-me">
+                <img src="https://images.unsplash.com/photo-1519340333755-56e9c1d04579?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="POLVE Familiar" class="product-img">
+                <h2 class="product-title">POLVE Familiar</h2>
+                <p style="color: var(--color-accent); margin-bottom: 0.5rem; opacity: 0.8;">(250g - aprox 20 pzas)
+                </p>
+                <p class="product-desc">"La caja que une". Suficientes para compartir en la mesa o regalar a quienes más
+                    quieres. Viene en empaque especial.</p>
+                <div class="product-price">$120.00 MXN</div>
+                <button class="btn-whatsapp" data-product="POLVE Familiar (250g)" data-price="$120">
+                    <i class="fa-brands fa-whatsapp"></i> Pedir POLVE Familiar
+                </button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card animate-me"
+                style="border: 2px solid var(--color-accent); position: relative; box-shadow: var(--shadow-soft);">
+                <div
+                    style="position: absolute; top: 10px; right: 10px; background: var(--color-accent); color: white; padding: 4px 12px; border-radius: 50px; font-size: 0.85rem; font-weight: 600;">
+                    ¡Mejor Valor!</div>
+                <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Pack 3 POLVE" class="product-img">
+                <h2 class="product-title">Pack 3 POLVE</h2>
+                <p style="color: var(--color-accent); margin-bottom: 0.5rem; opacity: 0.8;">(3 bolsas de 100g)</p>
+                <p class="product-desc">"Trilogía dulce". Uno para ti, uno para regalar, y otro... bueno, tú decides.
+                    ¡Nuestra opción más popular!</p>
+                <div class="product-price" style="color: var(--color-brand-pop);">$149.00 MXN <span
+                        style="text-decoration: line-through; color: #999; font-size: 0.9rem; margin-left: 5px;">$165</span>
+                </div>
+                <button class="btn-whatsapp" data-product="Pack 3 POLVE" data-price="$149"
+                    style="background: var(--color-text); color: white;">
+                    <i class="fa-brands fa-whatsapp"></i> ¡Lo quiero todo!
+                </button>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 5rem;">
+            <p style="font-size: 1.1rem; color: var(--color-secondary); opacity: 0.8;">
+                Para eventos especiales o pedidos grandes, <a href="#"
+                    style="color: var(--color-accent); border-bottom: 1px dashed var(--color-accent);">escríbenos
+                    directamente</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="polve.png" alt="POLVE Logo Footer">
+        </div>
+        <p style="opacity: 0.7;">"El polvo que abraza"</p>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p class="copyright">© 2026 POLVE. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

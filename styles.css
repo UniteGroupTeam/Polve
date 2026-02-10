@@ -1,0 +1,623 @@
+/* Global Styles */
+:root {
+    /* "Rustic Sweet" Palette - Cabaña Style */
+    --color-bg: #F9F3EA;
+    /* Crema tostada suave / Warm oat */
+    --color-text: #4E342E;
+    /* Café espresso intenso */
+    --color-accent: #8D6E63;
+    /* Madera suave / Cocoa */
+    --color-highlight: #A1887F;
+    /* Taupe / Secondary wood tone */
+    --color-brand-pop: #5D4037;
+    /* Darker wood for contrast */
+    --color-surface: #FFFFFF;
+    /* White crisp cards */
+
+    /* Logo colors meant to stand out as "gems" in the wood */
+    --color-logo-blue: #3B82F6;
+
+    --font-heading: 'Pacifico', cursive;
+    --font-body: 'Inter', sans-serif;
+    --border-radius: 12px;
+
+    /* Warm, cozy shadows instead of neon glows */
+    --shadow-soft: 0 4px 20px rgba(78, 52, 46, 0.08);
+    --shadow-strong: 0 10px 40px rgba(78, 52, 46, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Subtle paper/grain texture overlay effect could go here, keeping it clean for now */
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+p {
+    color: #6D4C41;
+    /* Softer brown for body text */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(249, 243, 234, 0.95);
+    /* Matches bg with transparency */
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(78, 52, 46, 0.05);
+    /* Very subtle warm shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-text);
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    /* No border radius for logo */
+    border-radius: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--color-text);
+    position: relative;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Emotional Section Video Background */
+.section-emotional {
+    position: relative;
+    overflow: hidden;
+    /* Ensure text is readable/visible on top of video */
+}
+
+/* Hidden by default on Desktop as requested */
+.emotional-video-container,
+.emotional-video-bg,
+.emotional-video-overlay {
+    display: none !important;
+    /* Force hide on desktop */
+}
+
+.emotional-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.emotional-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Gradient: Solid Cream at top (for title) -> Transparent at bottom */
+    background: linear-gradient(to bottom,
+            rgba(249, 243, 234, 1) 0%,
+            rgba(249, 243, 234, 0.9) 15%,
+            rgba(249, 243, 234, 0.6) 40%,
+            rgba(249, 243, 234, 0.2) 100%);
+    backdrop-filter: blur(3px);
+    /* Subtle blur overall, stronger feeling at top due to opacity */
+}
+
+.section-emotional>* {
+    position: relative;
+    z-index: 2;
+    /* Content above video/overlay */
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+
+    /* Navbar Mobile Adjustment */
+    nav {
+        padding: 0.8rem 1.5rem;
+        /* Smaller padding on mobile */
+    }
+
+    /* Mobile Menu - Full Screen Overlay Style for smoothness */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Center vertically */
+        align-items: center;
+        position: fixed;
+        /* Fixed to viewport */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        /* Full screen */
+        background: rgba(249, 243, 234, 0.98);
+        /* Opaque warm bg */
+        backdrop-filter: blur(10px);
+        transform: translateY(-100%);
+        /* Hidden top */
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Slicky smooth */
+        z-index: 900;
+        /* Behind navbar content but above page */
+        padding-top: 60px;
+        /* Space for logo/close btn if needed */
+        opacity: 1;
+        pointer-events: auto;
+        /* Always auto since we translate */
+        box-shadow: none;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        /* Slide down */
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+        /* Bigger touch targets */
+        margin: 1.5rem 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Staggered animation for links when menu opens */
+    .nav-links.active a {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.2s;
+    }
+
+    .nav-links.active a:nth-child(2) {
+        transition-delay: 0.3s;
+    }
+
+    .nav-links.active a:nth-child(3) {
+        transition-delay: 0.4s;
+    }
+
+    /* Hamburger Button - FORCE VISIBILITY */
+    .mobile-menu-btn {
+        display: block !important;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--color-text);
+        z-index: 2000;
+        /* Ensure it is top most */
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu-btn.active {
+        transform: rotate(180deg);
+        /* Rotate for "Tache" animation */
+    }
+
+    /* Mobile Video Section Specifics - ENABLED ON MOBILE (Override Desktop) */
+    .emotional-video-container {
+        display: block !important;
+        position: relative;
+        width: calc(100% + 4rem);
+        /* Break out of section padding (2rem * 2) */
+        margin-left: -2rem;
+        /* Pull left to edge */
+        margin-bottom: -6rem;
+        /* Pull down to edge */
+        margin-top: 3rem;
+        /* Space from text */
+        height: 280px;
+        /* Nice proportion */
+        z-index: 1;
+        border-top: 4px solid var(--color-brand-pop);
+        overflow: hidden;
+    }
+
+    .emotional-video-bg {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        transform: none;
+        /* Reset desktop transform */
+        min-width: 0;
+        min-height: 0;
+    }
+
+    .emotional-video-overlay {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent 0%, rgba(78, 52, 46, 0.5) 100%);
+        z-index: 1;
+        margin: 0;
+        pointer-events: none;
+    }
+
+    .mobile-video-overlay {
+        display: none;
+    }
+}
+
+/* Hero text responsiveness */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    /* Grid gap smaller */
+    .products-grid {
+        gap: 2rem;
+    }
+}
+}
+
+/* Hide hamburger on desktop */
+.mobile-menu-btn {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    /* Background fallback */
+    background: radial-gradient(circle at center, #FFFDF5 0%, #F9F3EA 100%);
+}
+
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Warm overlay for text readability */
+    background: rgba(78, 52, 46, 0.4);
+}
+
+.hero-content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.hero-logo-large {
+    width: 250px;
+    max-width: 70%;
+    margin-bottom: 2rem;
+    border-radius: 0;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: #FFF;
+    /* High contrast on video */
+    margin-bottom: 0.5rem;
+    z-index: 2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #F9F3EA;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    z-index: 2;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    background-color: #FFF;
+    color: var(--color-brand-pop);
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    border: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background-color: #F0EAE2;
+    color: var(--color-brand-pop);
+}
+
+/* Sugar Particle Effect */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    /* Since bg is light, white particles might be hard to see. 
+       Actually, sugar is white. 
+       Let's optimize opacity in JS or use a slightly off-white for visibility if needed, 
+       but standard white implies sugar. */
+}
+
+/* History Page */
+.history-section {
+    padding: 8rem 2rem 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.history-block {
+    margin-bottom: 5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.history-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.history-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    border-radius: var(--border-radius);
+}
+
+.history-text-content h1,
+.history-text-content h2 {
+    color: var(--color-brand-pop);
+}
+
+/* Catalog Page */
+.catalog-section {
+    padding: 8rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    background: var(--color-surface);
+    /* White card */
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Warm glow hover effect */
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(141, 110, 99, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+    /* Cocoa tint */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.product-card:hover::before {
+    opacity: 1;
+}
+
+.product-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+}
+
+.product-title {
+    font-size: 1.6rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.product-desc {
+    color: var(--color-accent);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.product-price {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--color-brand-pop);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.btn-whatsapp {
+    background: transparent;
+    border: 2px solid var(--color-text);
+    color: var(--color-text);
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background: var(--color-text);
+    color: #F9F3EA;
+    box-shadow: 0 5px 15px rgba(78, 52, 46, 0.2);
+}
+
+/* Footer */
+footer {
+    background: white;
+    /* Clean footer */
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 6rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.social-links {
+    margin: 1.5rem 0;
+}
+
+.social-links a {
+    margin: 0 0.8rem;
+    font-size: 1.4rem;
+    color: var(--color-accent);
+}
+
+.social-links a:hover {
+    color: var(--color-text);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #9ea0a3;
+    margin-top: 1.5rem;
+}

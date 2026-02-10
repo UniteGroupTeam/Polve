@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLVE | El polvo que endulza</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="polve.png" alt="POLVE Logo">
+            </a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="historia.html">Historia</a>
+            <a href="catalogo.html">Catálogo</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <video autoplay muted loop playsinline id="hero-video">
+            <source src="https://i.imgur.com/IcdlGnG.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="hero-content">
+            <img src="polve.png" alt="POLVE" class="hero-logo-large animate-me">
+            <h1 class="animate-me">POLVE</h1>
+            <p class="animate-me">El polvo que endulza tu día.</p>
+            <a href="catalogo.html" class="cta-button animate-me">Ver los polvorones</a>
+        </div>
+    </header>
+
+    <!-- Emotional Section -->
+    <section class="section-emotional" style="padding: 6rem 2rem; text-align: center; background-color: white;">
+
+        <h2 style="font-size: 2.5rem; color: var(--color-brand-pop); margin-bottom: 1.5rem;">Sabor que abraza</h2>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; color: var(--color-accent);">
+            En cada <strong>POLVE</strong> hay una historia de calidez. No es solo un dulce, es el recuerdo de la cocina
+            de siempre, reinventado para ti. Un bocado que se deshace y deja una sonrisa.
+        </p>
+        <div style="margin-top: 4rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+            <div style="width: 250px;">
+                <i class="fa-solid fa-heart"
+                    style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+                <h3
+                    style="font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
+                    Amor Puro</h3>
+                <p style="font-size: 0.95rem; color: #795548;">Ingredientes seleccionados con el corazón.</p>
+            </div>
+            <div style="width: 250px;">
+                <i class="fa-solid fa-wand-magic-sparkles"
+                    style="font-size: 2.5rem; color: var(--color-logo-blue); margin-bottom: 1rem;"></i>
+                <h3
+                    style="font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
+                    Magia Casera</h3>
+                <p style="font-size: 0.95rem; color: #795548;">La receta secreta que no pasa de moda.</p>
+            </div>
+            <div style="width: 250px;">
+                <i class="fa-solid fa-gift"
+                    style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+                <h3
+                    style="font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
+                    Para Compartir</h3>
+                <p style="font-size: 0.95rem; color: #795548;">El regalo perfecto es dulce y suave.</p>
+            </div>
+        </div>
+
+        <!-- Video Background (Bottom) -->
+        <div class="emotional-video-container">
+            <video autoplay muted loop playsinline class="emotional-video-bg">
+                <source src="https://i.imgur.com/r9Z3JvW.mp4" type="video/mp4">
+            </video>
+            <div class="emotional-video-overlay"></div>
+        </div>
+    </section>
+
+    <!-- Occasions Section -->
+    <section style="padding: 6rem 2rem; background-color: var(--color-bg); text-align: center;">
+        <h2 style="font-size: 2.5rem; color: var(--color-text); margin-bottom: 3rem;">Listos para cualquier ocasión</h2>
+
+        <div class="occasions-grid"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+
+            <!-- Trabajo -->
+            <div class="occasion-card animate-me"
+                style="background: white; padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-soft);">
+                <div style="font-size: 2.5rem; color: var(--color-text); margin-bottom: 1rem;">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <h3 style="margin-bottom: 0.5rem; color: var(--color-brand-pop);">En el Trabajo</h3>
+                <p style="font-size: 1rem;">El "break" de 5 minutos que te recarga de energía y sonrisas para seguir.
+                </p>
+            </div>
+
+            <!-- Escuela -->
+            <div class="occasion-card animate-me"
+                style="background: white; padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-soft);">
+                <div style="font-size: 2.5rem; color: var(--color-text); margin-bottom: 1rem;">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 style="margin-bottom: 0.5rem; color: var(--color-brand-pop);">En la Escuela</h3>
+                <p style="font-size: 1rem;">El premio perfecto después de un examen o para compartir en el recreo.</p>
+            </div>
+
+            <!-- Recreo / Domingo -->
+            <div class="occasion-card animate-me"
+                style="background: white; padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-soft);">
+                <div style="font-size: 2.5rem; color: var(--color-text); margin-bottom: 1rem;">
+                    <i class="fa-solid fa-couch"></i>
+                </div>
+                <h3 style="margin-bottom: 0.5rem; color: var(--color-brand-pop);">Tardes de Relax</h3>
+                <p style="font-size: 1rem;">Café, libro y un POLVE. No necesitas nada más para ser feliz.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="polve.png" alt="POLVE Logo Footer">
+        </div>
+        <p style="font-style: italic; opacity: 0.7;">"El polvo que abraza"</p>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p class="copyright">© 2026 POLVE. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
