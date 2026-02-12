@@ -133,7 +133,7 @@ function getUserTypeLabel() {
 }
 
 function getWhatsAppLink() {
-    const phone = "5215555555555";
+    const phone = "5215574123521";
     let message = "";
 
     if (cart.length === 0) {
@@ -151,9 +151,6 @@ function getWhatsAppLink() {
         }
     }
 
-    // Add image link for context (WhatsApp will often generate a preview)
-    message += `%0A%0Ahttps://polve.com/polve.png`;
-
     return `https://wa.me/${phone}?text=${message}`;
 }
 
@@ -164,7 +161,7 @@ function quoteCart() {
 function quoteProduct(productId) {
     const product = products.find(p => p.id === productId);
     const message = `Hola POLVE, soy ${getUserTypeLabel()}, y me gustaría cotizar: ${product.name}.`;
-    const phone = "5215555555555";
+    const phone = "5215574123521";
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
 }
 
