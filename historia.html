@@ -4,103 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLVE | Nuestra Historia</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
-
+    <title>POLVE - Artisan Snacks</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body>
+<body class="theme-polvorones">
+
+    <canvas id="particles-canvas" style="opacity: 0.3; pointer-events: none;"></canvas>
 
     <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-                <img src="polve.png" alt="POLVE Logo">
-            </a>
-        </div>
-        <div class="mobile-menu-btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="historia.html">Historia</a>
-            <a href="catalogo.html">Catálogo</a>
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="polve.png" alt="POLVE Artisan Snacks">
+        </a>
+
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="historia.html" class="active">Nuestra Historia</a></li>
+            </ul>
+
+            <div class="search-container-nav">
+                <input type="text" id="global-search" class="search-input-nav" placeholder="Buscar productos..."
+                    aria-label="Search">
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <div class="cart-icon-container">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count">0</span>
+                <div class="cart-summary">
+                    <h4 style="font-family: var(--font-heading); margin-bottom: 1rem;">Tu Selección</h4>
+                    <div class="cart-items-list"></div>
+                    <button class="btn-card primary" style="width: 100%; margin-top: 1rem;"
+                        onclick="quoteCart()">Cotizar ahora</button>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- History Content -->
-    <div class="history-section">
+    <!-- Cinematic Header -->
+    <header class="hero"
+        style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://imgur.com/2ByhShy'); background-size: cover; background-attachment: fixed;">
+        <h1 style="font-size: 4rem; color: white;">Nuestra Historia</h1>
+    </header>
 
-        <div class="history-block">
-            <h1
-                style="text-align: center; font-size: 3.5rem; color: var(--color-brand-pop); margin-bottom: 2rem; position: relative; z-index: 2;">
-                La Historia de POLVE</h1>
-            <img src="https://images.unsplash.com/photo-1621236378699-8597fafc9286?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
-                alt="Manos preparando masa" class="history-img" style="filter: sepia(0.2);">
+    <!-- Content -->
+    <section class="features-section"
+        style="max-width: 900px; margin: 0 auto; text-align: left; background: white; margin-top: -5rem; position: relative; padding: 5rem; border: 1px solid var(--border-subtle);">
+        <p class="section-subtitle"
+            style="text-align: left; font-style: italic; font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 3rem;">
+            "Todo comenzó con un aroma: el de las nueces tostándose en la vieja cocina de la abuela."
+        </p>
 
-            <div class="history-text-content">
-                <p>
-                    Todo empezó en la vieja mesa de madera de la abuela, donde el aire siempre olía a canela tostada y
-                    azúcar. No eran solo polvorones; eran pequeñas cápsulas de tiempo. <strong>POLVE</strong> nace de
-                    esos domingos infinitos, de esas manos expertas que sabían cuánto polvo mágico echar sin medirlo,
-                    solo sintiéndolo.
+        <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-main);">
+            Los polvorones no eran solo galletas; eran abrazos comestibles, hechos con paciencia y amor para compartir
+            en familia.
+            Con el tiempo, decidimos compartir ese calor de hogar con el mundo. POLVE nació para rescatar esa tradición,
+            pero con un toque moderno y elegante, sin perder la esencia artesanal que nos define. Cada polvorón se
+            deshace en tu boca,
+            recordándote los momentos más dulces de tu vida.
+        </p>
+
+        <h3 style="font-size: 2rem; margin-top: 4rem; margin-bottom: 2rem;">La Evolución Gourmet</h3>
+
+        <div style="display: flex; gap: 2rem; align-items: flex-start;">
+            <div style="flex: 1;">
+                <p style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-main);">
+                    Pero la familia POLVE ha crecido. No nos quedamos solo con la tradición; buscamos la innovación.
+                    Por eso, introdujimos nuestra línea de <strong>Palomitas Gourmet</strong>.
                 </p>
+                <p style="font-size: 1.1rem; color: var(--text-muted);">
+                    Una explosión de sabores que van desde el clásico caramelo dorado hasta combinaciones atrevidas como
+                    mora azul y piña enchilada.
+                    Cada grano de maíz es seleccionado y explotado a la perfección para brindarte una experiencia
+                    crujiente y llena de sabor.
+                </p>
+            </div>
+            <div
+                style="flex: 1; min-height: 200px; background: #FAF9F6; display: flex; align-items: center; justify-content: center; font-style: italic; color: var(--text-muted); opacity: 0.6;">
+                [Imagen Artesanal]
             </div>
         </div>
 
-        <div class="history-block">
-            <h2 style="font-size: 2.5rem; color: var(--color-highlight);">Más que una receta, un legado</h2>
-
-            <div class="history-text-content">
-                <p>
-                    La receta secreta de <strong>POLVE</strong> ha viajado a través de generaciones, guardada
-                    celosamente en el corazón de nuestra familia. Es esa mezcla perfecta que se deshace en tu boca al
-                    instante, dejándote con un suspiro de satisfacción y ganas de otro.
-                </p>
-            </div>
-            <img src="https://images.unsplash.com/photo-1598215439218-f9d698e722d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
-                alt="Harina volando cocina" class="history-img" style="filter: sepia(0.2);">
+        <div style="margin-top: 5rem; text-align: center;">
+            <p style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-main);">Gracias por ser
+                parte de nuestra familia.</p>
+            <img src="polve.png" alt="Signature" style="height: 60px; margin-top: 1rem; opacity: 0.5;">
         </div>
 
-        <div class="history-block">
-            <h2 style="font-size: 2.5rem; color: var(--color-accent);">Un abrazo en cada POLVE</h2>
-
-            <div class="history-text-content">
-                <p>
-                    Hoy, queremos compartir esa magia contigo. <strong>POLVE</strong> es el polvo que abraza, el dulce
-                    que une. Queremos que al abrir una caja, revivas la calidez de un hogar lleno de risas. Porque a
-                    veces, la felicidad viene cubierta de azúcar.
-                </p>
-            </div>
-            <img src="https://images.unsplash.com/photo-1605256486073-4581977d4c22?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
-                alt="Polvorones listos" class="history-img" style="filter: sepia(0.2);">
-
-            <div style="text-align: center; margin-top: 4rem;">
-                <a href="catalogo.html" class="cta-button">Probar la magia</a>
-            </div>
-        </div>
-
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-logo">
-            <img src="polve.png" alt="POLVE Logo Footer">
-        </div>
-        <p style="opacity: 0.7;">"El polvo que abraza"</p>
-        <div class="social-links">
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-        <p class="copyright">© 2026 POLVE. Todos los derechos reservados.</p>
+    <footer style="margin-top: 0;">
+        <p>&copy; 2026 POLVE. Historia escrita con amor.</p>
     </footer>
 
     <script src="script.js"></script>
